@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import { useState } from 'react';
-import { replies } from '../data.js'
 
 export default function Home() {
 
