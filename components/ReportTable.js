@@ -1,5 +1,5 @@
 export default function ReportTable(props) {
-     
+    if (props.loading) return <p>Loading ...</p>
     if (props.locations.length == 0) {
         return (
             <h2 className="w-1/2 mx-auto my-8 text-2xl text-center">No Cookie Stands Available </h2>
@@ -10,7 +10,7 @@ export default function ReportTable(props) {
             <table className="w-1/2 mx-auto my-8 text-2xl text-center bg-lime-800">
                 <thead>
                     <tr>
-                        <th className="border border-black">location</th>
+                        <th className="border border-black">location <span onClick={() => props.onDelete(item.id)}>[X]</span></th>
                         {props.hours.map(item => (
                             <th className="border border-black">{item}</th>
                         ))}
